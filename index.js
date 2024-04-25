@@ -20,7 +20,7 @@ export function Haystack() {
   const token = loginResponse.payload.data.accessToken;
   headers.employeeId = loginResponse.payload.data.employeeId;
 
-  // //onboard customer
+  //onboard customer
   const customerId = L1Api.onboardCustomer(token, headers);
 
   //create demographics
@@ -30,19 +30,19 @@ export function Haystack() {
   //customer list
   L1Api.customerList(token, headers);
 
-  // //Get Loan Application
+  //Get Loan Application
   L2Api.getLoanApplication(token, headers, customerId);
 
   //create survey
-   L2Api.createsurvey(token, headers, customerId);
+  L2Api.createsurvey(token, headers, customerId);
 
-  // // create allied info
-   L2Api.createAlliedInfo(token, headers, customerId);
+  // create allied info
+  L2Api.createAlliedInfo(token, headers, customerId);
 
-  // //create house hold member
+  //create house hold member
   L2Api.createHouseholdMember(token, headers, customerId);
 
-  // // //create income
+  //create income
   L2Api.createIncome(token, headers, customerId);
 
   //create income
@@ -50,16 +50,16 @@ export function Haystack() {
 
   //create Bank assessment
   L2Api.createBankAssessment(token, headers, customerId);
-  
+
   //Get loan Details
-   L2Api.getLoanDetails(token, headers, customerId);
+  L2Api.getLoanDetails(token, headers, customerId);
 
   //create Bank assessment
   L2Api.createLoanDetails(token, headers, customerId);
 
   sleep(sleepTime);
   //create bank details
-   L3Api.createBankDetails(token, headers, customerId);
+  L3Api.createBankDetails(token, headers, customerId);
 }
 
 

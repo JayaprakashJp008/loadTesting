@@ -1,2 +1,2 @@
-Run k6                    ==> k6 run --vus 20 --iterations 20 Haystack.js
+Run k6                    ==> k6 run --vus 20 --iterations 20 index.js
 Download report as csv    ==> k6 run --out csv=k6_test_results.csv k6_load_test.js
