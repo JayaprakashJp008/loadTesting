@@ -3,8 +3,10 @@ import { urls } from "../urls.js";
 import { checkResult } from "../helper.js";
 import { L3Payload } from "../Payload/L3.js";
 import { L1Api } from "./L1.js";
+import { sleep } from "k6";
 
 const customerSignature = open("../Documents/pan1.jpeg", "b");
+const sleepTime = 5
 
 
 export const L3Api = {
@@ -16,6 +18,7 @@ export const L3Api = {
     L1Api.uploadDocuments(token, headers, customerId, "CUSTOMER_SIGNATURE", [
       customerSignature,
     ]);
+    sleep(sleepTime);
 
     let createBankDetailsurl = urls.L3.createBankDetailsurl;
     createBankDetailsurl = createBankDetailsurl.replace(
