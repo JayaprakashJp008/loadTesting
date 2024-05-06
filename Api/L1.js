@@ -21,10 +21,10 @@ export const L1Api = {
     };
 
     const loginCredentials = L1Payload.loginPayload;
-    //console.log(loginCredentials)
     const index = Math.floor(
       Math.random() * (loginCredentials.length - 1 + 1) + 0
     ); //generate random index value
+
     const login = http.post(
       urls.L1.loginUrl,
       JSON.stringify(loginCredentials[index]),
@@ -33,11 +33,13 @@ export const L1Api = {
 
     //check result
     checkResult("Login", login);
-    let loginResponse = JSON.parse(login.body);
-    loginResponse.payload.data.employeeId = loginCredentials[index].payload.employeeId;
-    var employeeId = loginCredentials[index].payload.employeeId;
-    console.log('employeeId', employeeId);
-    return loginResponse;
+    if (login.status == 200) {
+      let loginResponse = JSON.parse(login.body);
+      loginResponse.payload.data.employeeId = loginCredentials[index].payload.employeeId;
+      var employeeId = loginCredentials[index].payload.employeeId;
+      console.log('employeeId', employeeId);
+      return loginResponse;
+    }
   },
 
   onboardCustomer: (token, headers) => {
