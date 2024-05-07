@@ -12,11 +12,11 @@ const sleepTime = 5;
 //   // Run the test for 1 minute
 // };
 
-export function Haystack() {
+export async function Haystack() {
   const headers = L1Payload.headers;
 
   //login
-  const loginResponse = L1Api.login();
+  const loginResponse = await L1Api.login();
   let token;
   if (loginResponse) {
     token = loginResponse.payload.data.accessToken;
@@ -25,7 +25,7 @@ export function Haystack() {
 
   if (token) {
     //onboard customer
-    const customerId = L1Api.onboardCustomer(token, headers);
+    const customerId = await L1Api.onboardCustomer(token, headers);
 
     //create demographics
     L1Api.createDemographics(token, headers, customerId);
