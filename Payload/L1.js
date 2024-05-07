@@ -12,7 +12,7 @@ export const L1Payload = {
         'Authorization': `Bearer token`,
         'partner-id': 'SH-FED',
         'client': 'federal-agri',
-        'product-id': 'PD-FED-ALL',
+        'product-id': 'PD-FED-KCC',
         'client': 'federal-agri'
     },
 
