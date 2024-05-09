@@ -2,82 +2,82 @@ export const config = {
   logins: [
     {
       payload: {
-        employeeId: "us-sh-fed-54321",
+        employeeId: "us-sh-see-77012",
         password: "Nst@1234",
       },
     },
-    {
-        payload: {
-            employeeId: "us-sh-fed-00029",
-            password: "Nst@1234"
-        }
-    },
-    {
-        payload: {
-            employeeId: "us-sh-fed-00030",
-            password: "Nst@1234"
-        }
-    },
-    {
-        payload: {
-            employeeId: "us-sh-fed-00031",
-            password: "Nst@1234"
-        }
-    },
-    {
-        payload: {
-            employeeId: "us-sh-fed-00032",
-            password: "Nst@1234"
-        }
-    },
-    {
-        payload: {
-            employeeId: "us-sh-fed-00033",
-            password: "Nst@1234"
-        }
-    },
-    {
-        payload: {
-            employeeId: "us-sh-fed-00034",
-            password: "Nst@1234"
-        }
-    },
-    {
-        payload: {
-            employeeId: "us-sh-fed-28372",
-            password: "Nst@1234"
-        }
-    },
-    {
-        payload: {
-            employeeId: "us-sh-fed-27461",
-            password: "Nst@1234"
-        }
-    },
-    {
-        payload: {
-            employeeId: "us-sh-fed-83662",
-            password: "Nst@1234"
-        }
-    },
-    {
-        payload: {
-            employeeId: "us-sh-fed-82671",
-            password: "Nst@1234"
-        }
-    },
-    {
-        payload: {
-            employeeId: "us-sh-fed-47237",
-            password: "Nst@1234"
-        }
-    },
-    {
-        payload: {
-            employeeId: "us-sh-fed-29274",
-            password: "Nst@1234"
-        }
-    },
+    // {
+    //     payload: {
+    //         employeeId: "us-sh-fed-00029",
+    //         password: "Nst@1234"
+    //     }
+    // },
+    // {
+    //     payload: {
+    //         employeeId: "us-sh-fed-00030",
+    //         password: "Nst@1234"
+    //     }
+    // },
+    // {
+    //     payload: {
+    //         employeeId: "us-sh-fed-00031",
+    //         password: "Nst@1234"
+    //     }
+    // },
+    // {
+    //     payload: {
+    //         employeeId: "us-sh-fed-00032",
+    //         password: "Nst@1234"
+    //     }
+    // },
+    // {
+    //     payload: {
+    //         employeeId: "us-sh-fed-00033",
+    //         password: "Nst@1234"
+    //     }
+    // },
+    // {
+    //     payload: {
+    //         employeeId: "us-sh-fed-00034",
+    //         password: "Nst@1234"
+    //     }
+    // },
+    // {
+    //     payload: {
+    //         employeeId: "us-sh-fed-28372",
+    //         password: "Nst@1234"
+    //     }
+    // },
+    // {
+    //     payload: {
+    //         employeeId: "us-sh-fed-27461",
+    //         password: "Nst@1234"
+    //     }
+    // },
+    // {
+    //     payload: {
+    //         employeeId: "us-sh-fed-83662",
+    //         password: "Nst@1234"
+    //     }
+    // },
+    // {
+    //     payload: {
+    //         employeeId: "us-sh-fed-82671",
+    //         password: "Nst@1234"
+    //     }
+    // },
+    // {
+    //     payload: {
+    //         employeeId: "us-sh-fed-47237",
+    //         password: "Nst@1234"
+    //     }
+    // },
+    // {
+    //     payload: {
+    //         employeeId: "us-sh-fed-29274",
+    //         password: "Nst@1234"
+    //     }
+    // },
   ],
 
   customerList: [

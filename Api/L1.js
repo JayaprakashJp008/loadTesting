@@ -65,7 +65,6 @@ export const L1Api = {
     console.log("customerId :", customerId, "| name :", names[index]);
     //check result
     checkResult("Onboard Customers", onboardCustomer);
-    sleep(sleepTime);
     return customerId;
   },
 
@@ -161,6 +160,5 @@ export const L1Api = {
 
     //check result
     checkResult("CustomerList", customerList);
-    sleep(sleepTime);
   },
 };
