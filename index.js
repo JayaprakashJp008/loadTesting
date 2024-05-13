@@ -18,7 +18,7 @@ export async function Haystack() {
   //login
   const loginResponse = await L1Api.login();
   let token;
-  if (loginResponse) {
+  if (loginResponse && loginResponse.payload.code == 'success') {
     token = loginResponse.payload.data.accessToken;
     headers.employeeId = loginResponse.payload.data.employeeId;
   }
