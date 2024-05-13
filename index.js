@@ -3,7 +3,7 @@ import { L1Payload } from "./Payload/L1.js";
 import { L1Api } from "./Api/L1.js";
 import { L2Api } from "./Api/L2.js";
 import { L3Api } from "./Api/L3.js";
-
+import { config } from "./config.js";
 const sleepTime = 5;
 
 // export let options = {
@@ -15,28 +15,32 @@ const sleepTime = 5;
 export async function Haystack() {
   const headers = L1Payload.headers;
 
+  const { tokens } = config;
   //login
-  const loginResponse = await L1Api.login();
-  let token;
-  if (loginResponse && loginResponse.payload.code == 'success') {
-    token = loginResponse.payload.data.accessToken;
-    headers.employeeId = loginResponse.payload.data.employeeId;
-  }
+  // const loginResponse = await L1Api.login();
+  const index = Math.floor(
+    Math.random() * (tokens.length - 1 + 1) + 0
+  ); //generate random index value
 
+  let token = tokens[index].token;
+  headers.employeeId = tokens[index].employeeId;
+  // if (loginResponse && loginResponse.payload.code == 'success') {
+  // token = loginResponse.payload.data.accessToken;
+  // }
   if (token) {
     //onboard customer
     const customerId = await L1Api.onboardCustomer(token, headers);
-
-    //create demographics
+    sleepTime(sleep)
+    // create demographics
     L1Api.createDemographics(token, headers, customerId);
 
     sleep(sleepTime);
     //customer list
-    L1Api.customerList(token, headers);
+    // L1Api.customerList(token, headers);
 
     //Get Loan Application
     L2Api.getLoanApplication(token, headers, customerId);
-
+    sleep(sleepTime);
     //create survey
     L2Api.createsurvey(token, headers, customerId);
 

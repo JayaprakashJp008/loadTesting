@@ -11,7 +11,6 @@ export const checkResult = (apiName, response) => {
       }
     },
   });
-
   if (checkResult && body.payload && body.payload.code == 'success') {
     console.log(
       `\x1b[32m${apiName} VU ${__VU} pass: ${response.status} message: ${body.payload.message}\x1b[0m`
