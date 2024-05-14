@@ -3,6 +3,7 @@ import { L1Payload } from "./Payload/L1.js";
 import { L1Api } from "./Api/L1.js";
 import { L2Api } from "./Api/L2.js";
 import { L3Api } from "./Api/L3.js";
+import { ListApi } from "./Api/List.js";
 
 const sleepTime = 5;
 
@@ -34,10 +35,10 @@ export function Haystack() {
   L2Api.getLoanApplication(token, headers, customerId);
 
   //create survey
-   L2Api.createsurvey(token, headers, customerId);
+  L2Api.createsurvey(token, headers, customerId);
 
   // // create allied info
-   L2Api.createAlliedInfo(token, headers, customerId);
+  L2Api.createAlliedInfo(token, headers, customerId);
 
   // //create house hold member
   L2Api.createHouseholdMember(token, headers, customerId);
@@ -50,18 +51,31 @@ export function Haystack() {
 
   //create Bank assessment
   L2Api.createBankAssessment(token, headers, customerId);
-  
+
   //Get loan Details
-   L2Api.getLoanDetails(token, headers, customerId);
+  L2Api.getLoanDetails(token, headers, customerId);
 
   //create Bank assessment
   L2Api.createLoanDetails(token, headers, customerId);
 
   sleep(sleepTime);
   //create bank details
-   L3Api.createBankDetails(token, headers, customerId);
-}
+  L3Api.createBankDetails(token, headers, customerId);
 
+  ListApi.getAlliedInfoDetails(token, headers);
+
+  ListApi.getAssetsDetails(token, headers);
+
+  ListApi.getBankDetails(token, headers);
+
+  ListApi.getCropDetails(token, headers);
+
+  ListApi.getDemographicDetails(token, headers);
+
+  ListApi.getMemberDetails(token, headers);
+
+  ListApi.getSurveyDetails(token, headers);
+}
 
 export default function () {
   Haystack();

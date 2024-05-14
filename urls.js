@@ -1,7 +1,6 @@
 export const urls = {
   L1: {
-    loginUrl:
-      "https://haystack-dev-tnagri.mifix.dev/auth/v2/auth/login",
+    loginUrl: "https://haystack-dev-tnagri.mifix.dev/auth/v2/auth/login",
     onboardCustomerUrl:
       "https://haystack-dev-tnagri.mifix.dev/main/customer/generate",
     documentUploadUrl:
@@ -33,5 +32,23 @@ export const urls = {
   L3: {
     createBankDetailsurl:
       "https://haystack-dev-tnagri.mifix.dev/main/customer/customerId/account",
+  },
+  List: {
+    demographicsDetailsUrl:
+      "https://haystack-dev-tnagri.mifix.dev/main/customer/customerId/demographics",
+    incomesDetailsUrl:
+      "https://haystack-dev-tnagri.mifix.dev/main/customer/customerId/incomes",
+    memberDetailsUrl:
+      "https://haystack-dev-tnagri.mifix.dev/main/customer/customerId/members",
+    assetsDetailsUrl:
+      "https://haystack-dev-tnagri.mifix.dev/main/customer/customerId/assets",
+    bankDetailsUrl:
+      "https://haystack-dev-tnagri.mifix.dev/main/customer/customerId/account",
+    alliedInfoDetailsUrl:
+      "https://haystack-dev-tnagri.mifix.dev/haystack/v1/allied/customerId/info",
+    cropDetailsUrl:
+      "https://haystack-dev-tnagri.mifix.dev/haystack/v1/kcc/customerId/crop",
+    surveyDetailsUrl:
+      "https://haystack-dev-tnagri.mifix.dev/haystack/v1/kcc/customerId/survey",
   },
 };
