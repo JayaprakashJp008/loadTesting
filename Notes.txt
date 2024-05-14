@@ -1,3 +1,4 @@
 Run k6                    ==> k6 run --vus 20 --iterations 20 index.js
 Download report as csv    ==> k6 run --out csv=k6_test_results.csv k6_load_test.js
 Grafana Projects page     ==> https://app.k6.io/projects
+JP_K6_KEY                 ==> K6_CLOUD_TOKEN=7831ce316f1ba20c692f156112c0b38bcb820147c4d0302ef199508e9c462af3

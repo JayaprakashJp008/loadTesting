@@ -13,7 +13,7 @@ let customerPhoto = open("../Documents/customer_photo.jpeg", "b");
 
 const recentCustomerPhoto = open("../Documents/recent_customer_photo.png", "b");
 
-const sleepTime = 10;
+const sleepTime = 3;
 export const L1Api = {
   login: () => {
     const params = {
@@ -58,14 +58,20 @@ export const L1Api = {
       { headers }
     );
 
-    //fetch customerId
-    const onboardCustomerBody = JSON.parse(onboardCustomer.body);
-    const customerId = onboardCustomerBody.payload.data.customerId;
-
-    console.log("customerId :", customerId, "| name :", names[index]);
     //check result
     checkResult("Onboard Customers", onboardCustomer);
-    return customerId;
+    console.log(onboardCustomer.body)
+    const onboardCustomerBody = JSON.parse(onboardCustomer.body);
+
+    if (onboardCustomerBody.payload.code == 'success') {
+      //fetch customerId
+      const customerId = onboardCustomerBody.payload.data.customerId;
+      console.log("customerId :", customerId, "| name :", names[index]);
+
+      sleep(sleepTime);
+      return customerId;
+    }
+    return false;
   },
 
   uploadDocuments: (
@@ -129,6 +135,8 @@ export const L1Api = {
 
     //check result
     checkResult("Demographics", createDemographics);
+    sleep(sleepTime);
+
   },
 
   customerList: (token, headers) => {

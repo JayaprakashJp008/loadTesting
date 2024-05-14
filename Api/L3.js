@@ -6,7 +6,7 @@ import { L1Api } from "./L1.js";
 import { sleep } from "k6";
 
 const customerSignature = open("../Documents/pan1.jpeg", "b");
-const sleepTime = 5
+const sleepTime = 3
 
 
 export const L3Api = {
@@ -35,5 +35,7 @@ export const L3Api = {
 
     //check result
     checkResult(" Bank details", createBankDetails);
+    sleep(sleepTime);
+
   },
 };

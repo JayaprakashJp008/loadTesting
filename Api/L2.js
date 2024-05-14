@@ -3,7 +3,8 @@ import { check } from "k6";
 import { urls } from "../urls.js";
 import { checkResult } from "../helper.js";
 import { L2Payload } from "../Payload/L2.js";
-
+import { sleep } from "k6";
+const sleepTime = 3;
 export const L2Api = {
   //Get loan Application
   getLoanApplication: (token, headers, customerId) => {
@@ -149,6 +150,7 @@ export const L2Api = {
 
     //check result
     checkResult("Get Loan Details", loanDetails);
+
   },
 
   createLoanDetails: (token, headers, customerId) => {
@@ -169,5 +171,7 @@ export const L2Api = {
 
     //check result
     checkResult("Create Loan Details", createLoanDetails);
+    sleep(sleepTime);
+
   },
 };

@@ -4,7 +4,7 @@ import { L1Api } from "./Api/L1.js";
 import { L2Api } from "./Api/L2.js";
 import { L3Api } from "./Api/L3.js";
 import { config } from "./config.js";
-const sleepTime = 5;
+const sleepTime = 10;
 
 // export let options = {
 //   vus: 5,
@@ -30,44 +30,46 @@ export async function Haystack() {
   if (token) {
     //onboard customer
     const customerId = await L1Api.onboardCustomer(token, headers);
-    sleepTime(sleep)
-    // create demographics
-    L1Api.createDemographics(token, headers, customerId);
+    sleep(sleepTime)    // create demographics
 
-    sleep(sleepTime);
-    //customer list
-    // L1Api.customerList(token, headers);
+    if (customerId) {
+      L1Api.createDemographics(token, headers, customerId);
 
-    //Get Loan Application
-    L2Api.getLoanApplication(token, headers, customerId);
-    sleep(sleepTime);
-    //create survey
-    L2Api.createsurvey(token, headers, customerId);
+      sleep(sleepTime);
+      // //customer list
+      // // L1Api.customerList(token, headers);
 
-    // create allied info
-    L2Api.createAlliedInfo(token, headers, customerId);
+      // // Get Loan Application
+      L2Api.getLoanApplication(token, headers, customerId);
+      sleep(sleepTime);
+      // //create survey
+      L2Api.createsurvey(token, headers, customerId);
 
-    //create house hold member
-    L2Api.createHouseholdMember(token, headers, customerId);
+      // // create allied info
+      L2Api.createAlliedInfo(token, headers, customerId);
 
-    //create income
-    L2Api.createIncome(token, headers, customerId);
+      // //create house hold member
+      L2Api.createHouseholdMember(token, headers, customerId);
 
-    //create income
-    L2Api.createIncomeExpenditure(token, headers, customerId);
+      // //create income
+      L2Api.createIncome(token, headers, customerId);
 
-    //create Bank assessment
-    L2Api.createBankAssessment(token, headers, customerId);
+      // //create income
+      L2Api.createIncomeExpenditure(token, headers, customerId);
 
-    //Get loan Details
-    L2Api.getLoanDetails(token, headers, customerId);
+      // //create Bank assessment
+      L2Api.createBankAssessment(token, headers, customerId);
 
-    //create loan details
-    L2Api.createLoanDetails(token, headers, customerId);
+      // //Get loan Details
+      L2Api.getLoanDetails(token, headers, customerId);
 
-    sleep(sleepTime);
-    //create bank details
-    L3Api.createBankDetails(token, headers, customerId);
+      // //create loan details
+      L2Api.createLoanDetails(token, headers, customerId);
+
+      sleep(sleepTime);
+      // //create bank details
+      L3Api.createBankDetails(token, headers, customerId);
+    }
   }
 }
 
