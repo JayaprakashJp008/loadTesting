@@ -3,17 +3,18 @@ import { L1Payload } from "./Payload/L1.js";
 import { L1Api } from "./Api/L1.js";
 import { L2Api } from "./Api/L2.js";
 import { L3Api } from "./Api/L3.js";
-import { config } from "./config.js";
-const sleepTime = 10;
+import { ListApi } from "./Api/List.js";
+
+const sleepTime = 5;
 
 // export let options = {
 //   vus: 5,
 //   duration: '10m' // 500 virtual users
 //   // Run the test for 1 minute
 // };
+const headers = L1Payload.headers;
 
 export async function Haystack() {
-  const headers = L1Payload.headers;
 
   const { tokens } = config;
   //login
@@ -73,10 +74,25 @@ export async function Haystack() {
   }
 }
 
+export async function List() {
+  ListApi.getAlliedInfoDetails(token, headers);
+
+  ListApi.getAssetsDetails(token, headers);
+
+  ListApi.getBankDetails(token, headers);
+
+  ListApi.getCropDetails(token, headers);
+
+  ListApi.getDemographicDetails(token, headers);
+
+  ListApi.getMemberDetails(token, headers);
+
+  ListApi.getSurveyDetails(token, headers);
+}
 
 export default function () {
   Haystack();
-  // onboardingcustomer();
+  // List();
 }
 
 export function teardown(data) {
